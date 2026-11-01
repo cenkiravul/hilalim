@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hilalim.com/sitemap.xml
