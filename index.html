@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hilalim — Ezan Vakti & İmsakiye</title>
+  <meta name="description" content="Ezan vakitleri, iftar sayacı, kıble, zikirmatik ve imsakiye. Ücretsiz.">
+  <meta property="og:title" content="Hilalim — Ezan Vakti & İmsakiye">
+  <meta property="og:description" content="Ezan vakitleri, iftar sayacı, kıble, zikirmatik ve imsakiye.">
+  <meta name="theme-color" content="#0B1A24">
+  <style>
+    :root { --bg: #0B1A24; --surface: #132836; --text: #F2F5F3; --muted: #A9B8B2; --gold: #E2B04A; --accent: #3FB59A; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--text);
+           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 24px; }
+    main { max-width: 420px; width: 100%; text-align: center; }
+    h1 { font-size: 40px; margin: 16px 0 4px; }
+    p { color: var(--muted); font-size: 18px; line-height: 1.5; margin: 0 0 28px; }
+    a.store { display: block; padding: 16px; margin: 12px 0; border-radius: 16px; font-size: 18px; font-weight: 700;
+              text-decoration: none; background: var(--surface); color: var(--text); }
+    a.store.primary { background: var(--gold); color: var(--bg); }
+    small { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <svg width="72" height="72" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" stroke="#E2B04A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <h1>Hilalim</h1>
+    <p>Ezan vakitleri, iftar sayacı, kıble, zikirmatik ve imsakiye.</p>
+    <a id="ios" class="store" href="#">App Store'dan indir</a>
+    <a id="android" class="store" href="#">Google Play'den indir</a>
+    <small id="soon"></small>
+  </main>
+  <script>
+    // One link for every share: iPhone → App Store, Android → Google Play, others see both buttons.
+    // TODO(launch): fill in the store URLs once the app is live.
+    var IOS_URL = '';      // e.g. https://apps.apple.com/app/id0000000000
+    var ANDROID_URL = '';  // e.g. https://play.google.com/store/apps/details?id=com.krvlgames.hilalim
+
+    var ua = navigator.userAgent || '';
+    var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var isAndroid = /Android/i.test(ua);
+    var ios = document.getElementById('ios');
+    var android = document.getElementById('android');
+
+    if (IOS_URL) ios.href = IOS_URL; else ios.style.display = 'none';
+    if (ANDROID_URL) android.href = ANDROID_URL; else android.style.display = 'none';
+    if (!IOS_URL && !ANDROID_URL) document.getElementById('soon').textContent = 'Çok yakında App Store ve Google Play\'de.';
+
+    if (isIOS && IOS_URL) { ios.classList.add('primary'); location.replace(IOS_URL); }
+    else if (isAndroid && ANDROID_URL) { android.classList.add('primary'); location.replace(ANDROID_URL); }
+  </script>
+</body>
+</html>
