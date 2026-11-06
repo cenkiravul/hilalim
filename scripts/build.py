@@ -11,7 +11,7 @@ import pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = 'https://hilalim.com'
 APP_ID = '6829459110'
-IOS_URL = f'https://apps.apple.com/tr/app/id{APP_ID}'
+IOS_URL = f'https://apps.apple.com/tr/app/hilalim-ezan-vakti-i-msakiye/id{APP_ID}'
 RAMADAN_START = dt.date(2027, 2, 8)  # 1 Ramazan 1448 (Diyanet)
 RAMADAN_DAYS = 29
 NAMES = ['İmsak', 'Güneş', 'Öğle', 'İkindi', 'Akşam', 'Yatsı']
